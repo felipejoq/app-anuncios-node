@@ -1,6 +1,9 @@
 {
   "name": "mitablero-beta",
   "version": "1.0.0",
+  "engines": {
+    "node": "10.15.0"
+  },
   "description": "",
   "main": "src/index.js",
   "scripts": {
