@@ -4,7 +4,9 @@ const { verificaToken } = require('../../helpers/auth');
 const Anuncio = require('../../models/Note');
 
 router.get('/anuncio', verificaToken, (req, res) => {
-    Anuncio.find({}, (err, anuncios) => {
+    Anuncio.find({})
+    .sort({'date': 'desc'})
+    .exec((err, anuncios) => {
 
         if(err){
             res.status(500).json({
@@ -17,7 +19,7 @@ router.get('/anuncio', verificaToken, (req, res) => {
             ok:true,
             anuncios
         });
-    })
+    });
 });
 
 module.exports = router;
